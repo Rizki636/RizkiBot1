@@ -38,5 +38,26 @@ def text(message):
 @bot.message_handler(regexp='mau tanya sesuatu')
 def text(message):
     bot.reply_to(message, """owh, ya udah lanjut tanya sana""")
+
+@bot.message_handler(commands=['covidindo'])
+
+def sambutan_start(message):
+    api = requests.get('https://api.kawalcorona.com/indonesia/')
+    api_json = api.json()
+    api_content = api_json
+    for wan in api_content:
+         negara = api_content[0]['name']
+         positif = api_content[0]['positif']
+         sembuh = api_content[0]['sembuh']
+         meninggal = api_content[0]['meninggal']
+         dirawat = api_content[0]['dirawat']
+         kirim = ('''
+Negara = {}
+Positif = {}
+Sembuh = {}
+Meninggal = {}
+Dirawat = {}
+'''.format(negara,positif,sembuh,meninggal,dirawat))
+         bot.reply_to(message, kirim)
 print("bot berjalan")
 bot.polling()
