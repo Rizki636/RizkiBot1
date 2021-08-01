@@ -6,6 +6,8 @@ bot = telebot.TeleBot(token=os.getenv('TG_BOT_TOKEN'))
 
 @bot.message_handler(commands=["start"])
 def awal_bot(message):
+    chatid = message.chat.id
+    bot.send_photo(chatid, open('1566206027.png','rb'))
     tahap1 = types.InlineKeyboardMarkup()
     tahap2 = types.InlineKeyboardButton(text="CHANNEL STORE",url="https://t.me/AZ_Dan_Rizki_Store636")
     tahap3 = types.InlineKeyboardButton(text="GRUP",url="https://t.me/GrupDanaGratis")
