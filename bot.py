@@ -1,8 +1,5 @@
-import telebot
-import time
-import pyshorteners
-import os
-import types
+import telebot #bot rizki
+from telebot import types
 
 bot = telebot.TeleBot(token=os.getenv('TG_BOT_TOKEN'))
 
