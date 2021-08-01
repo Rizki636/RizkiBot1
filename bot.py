@@ -1,3 +1,10 @@
+import telebot #bot rizki
+from telebot import types
+
+api = '1912333033:AAGKAZl1tH1hnR8Jj2F0WmyDtR3adidbXyY'
+
+rizki = telebot.TeleBot(api)
+
 @rizki.message_handler(commands=["start"])
 def awal_bot(message):
     tahap1 = types.InlineKeyboardMarkup()
@@ -17,3 +24,5 @@ def awal_bot(message):
     dest2 = types.InlineKeyboardButton(text="KONTAK ADMIN",url="https://t.me/Rizki636")
     dest1.add(dest2)
     rizki.send_message(message.chat.id,"ini adalah kontak admin",reply_markup=dest1)
+print("bot berjalan")
+rizki.polling()
