@@ -1,9 +1,9 @@
-import telebot #bot rizki
-from telebot import types
+import telebot
+import time
+import pyshorteners
+import os
 
-api = '1912333033:AAGKAZl1tH1hnR8Jj2F0WmyDtR3adidbXyY'
-
-rizki = telebot.TeleBot(api)
+bot = telebot.TeleBot(token=os.getenv('TG_BOT_TOKEN'))
 
 @rizki.message_handler(commands=["start"])
 def awal_bot(message):
@@ -17,6 +17,7 @@ def awal_bot(message):
     tahap1.add(tahap5)
     rizki.send_message(message.chat.id,"List Harga Yang Kami Jual\n===========\nYouTube Premium 4 Bulan = 3k\nYouTube Premium 1 Bulan = 1k\nNokos Telegram USA = 1.200\nNokos Telegram ID = 1.900\nNokos WhatsApp = 1k\n===========\nMinat Hubungi @Nokos_Rizki_Bot\n==========\nCommand yang tersedia di bot ini =\n/admin untuk melihat kontak admin",reply_markup=tahap1)
     rizki.send_message(message.chat.id,"Bot By @Rizki636 --> Github --> Heroku --> Telegram")
+    rizki.send_photo(chatid, open('1566206027.png','rb'))
 
 @rizki.message_handler(commands=["admin"])
 def awal_bot(message):
