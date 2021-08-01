@@ -1,5 +1,7 @@
 import os
-import telebot #bot rizki
+import telebot
+import requests
+import json #bot rizki
 from telebot import types
 
 bot = telebot.TeleBot(token=os.getenv('TG_BOT_TOKEN'))
