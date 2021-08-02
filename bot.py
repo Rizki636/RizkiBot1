@@ -61,5 +61,22 @@ Meninggal = {}
 Dirawat = {}
 '''.format(negara,positif,sembuh,meninggal,dirawat))
          bot.reply_to(message, kirim)
+@bot.message_handler(content_types=['photo'])
+def photo(message):
+    bot.reply_to(message,'ngapain kirim foto?')
+
+@bot.message_handler(content_types=['document'])
+def document(message):
+    bot.reply_to(message,'ngapain kirim dokumen?')
+
+@bot.message_handler(content_types=['text'])
+def text(message):
+    bot.reply_to(message,'perintah tersebut tidak ada di dalam bot')
+
+@bot.message_handler(content_types=['video'])
+def video(message):
+    bot.reply_to(message,'ngapain kirim video disini?')
+
 print("bot berjalan")
+
 bot.polling()
