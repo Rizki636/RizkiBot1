@@ -4,7 +4,7 @@ import requests
 import json #bot rizki
 from telebot import types
 
-api = "1918231171:AAFvAY5ozYEr1maU6K6OAybEa4WzdaK1WmM"
+api = "2146702080:AAENzxW2_Bllpz40ZOtugIzzKs5LqoKiRDM"
 bot = telebot.TeleBot(api)
 
 @bot.message_handler(commands=["start"])
